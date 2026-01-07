@@ -1,9 +1,29 @@
 function changeMe(arr) {
-  // you can only write your code here!
-    let data = {};
-    for(let i = 0; i < arr.length; i++){
+  if (arr.length === 0) {
+    console.log("");
+    return;
+  }
 
+  for (let i = 0; i < arr.length; i++) {
+    let birth = arr[i][3];
+    let age;
+
+    if (birth === undefined) {
+      age = "Invalid Birth Year";
+    } else {
+      age = 2026 - birth;
     }
+
+    let data = {
+      firstName: arr[i][0],
+      lastName: arr[i][1],
+      gender: arr[i][2],
+      age: age
+    };
+
+    console.log(`${i + 1}. ${data.firstName} ${data.lastName}:`);
+    console.log(data);
+  }
 }
 
 // TEST CASES
